@@ -62,16 +62,6 @@ void add_student()
 	cout << endl;
 }
 
-void print_person(int searchkey)
-{
-	cout << endl;
-	cout << "ID: " << student[searchkey].ID << endl;
-	cout << "Student Name: " << student[searchkey].f_name << " " << student[searchkey].l_name << endl;
-	cout << "Age: " << student[searchkey].Age << endl;
-	cout << "Class: " << student[searchkey].Class << endl;
-
-}
-
 void search_student()
 {
 	string fname;
@@ -82,7 +72,6 @@ void search_student()
 	{
 		if (student[i].f_name == fname && student[i].l_name == lname)
 		{
-			// print_person(i);
 			cout << endl;
 			cout << "ID: " << student[i].ID << endl;
 			cout << "Student Name: " << student[i].f_name << " " << student[i].l_name << endl;
@@ -109,6 +98,7 @@ int main()
 		 	 << "2. Display student data" << endl
 		 	 << "3. Search for student by ID" << endl << endl;
 	cin >> choice;
+	cout << endl;
 
 	/*
 		Make functions to do these tasks:
