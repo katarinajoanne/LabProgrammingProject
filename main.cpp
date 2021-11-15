@@ -46,7 +46,7 @@ int main()
 	int choice;
 
 	cout << "Welcome to our student data management system!" << endl << endl
-		 << "What would you like to do? " << endl;
+		 << "What would you like to do? ";
 	cin >> choice;
 	
 	/*
