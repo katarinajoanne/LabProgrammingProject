@@ -15,6 +15,11 @@ int counter = 0; //array index
 
 void add_student()
 {
+	/*
+		1. Function will ask for several data within the studentData
+		2. Prints out the data entered and asks for confirmation
+		3. Asks if user would like to add more student data
+	*/
 	addStudent: //goto Label
 	cout << "Please enter the following: " << endl;
 	cout << "Student ID: "; cin >> student[counter].ID;
