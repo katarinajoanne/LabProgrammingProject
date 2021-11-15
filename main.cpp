@@ -46,8 +46,9 @@ int main()
 	int choice;
 
 	cout << "Welcome to our student data management system!" << endl << endl
-		 << "What would you like to do?" << endl;
-
+		 << "What would you like to do? " << endl;
+	cin >> choice;
+	
 	/*
 		Make functions to do these tasks:
 		1. Add student data
