@@ -82,7 +82,16 @@ void search_student()
 	{
 		if (student[i].f_name == fname && student[i].l_name == lname)
 		{
-			print_person(i);
+			// print_person(i);
+			cout << endl;
+			cout << "ID: " << student[i].ID << endl;
+			cout << "Student Name: " << student[i].f_name << " " << student[i].l_name << endl;
+			cout << "Age: " << student[i].Age << endl;
+			cout << "Class: " << student[i].Class << endl;
+		}
+		else
+		{
+			continue;
 		}
 	}
 }
@@ -121,11 +130,13 @@ int main()
 		/*
 			function for sort algorithm
 		*/
+		goto start;
 		case 3:
 		/*
 			function for search algorithm
 		*/
 			search_student();
+			goto start;
 		break;
 		case 4:
 		goto exit;
