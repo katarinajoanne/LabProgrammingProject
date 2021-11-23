@@ -242,10 +242,10 @@ start: //goto label
 	/*
 		Make functions to do these tasks:
 		1. Add student data
-		2. Display student data (Joy and Katarina)
+		2. Display student data
 		   a. Opt 1: Edit data (Almas)
-		   b. Opt 2: Sort by GPA (output choice: ascending or descending?)
-		3. Search for student data with variable "ID" as input (Almas)
+		   b. Opt 2: Sort by GPA (output choice: ascending or descending) (Joy and Katarina)
+		3. Search for student data by name as input (Almas)
 	4. End Program
 	*/
 
