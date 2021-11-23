@@ -124,14 +124,6 @@ editStudent:
 		cout << endl;
 		goto editStudent;
 	}
-	/*
-	  ini klo sorting name modar pake ini aja :D
-
-	  Call function in main():
-	  int datakey;
-	  print_alldata();
-	  cout << "Enter which index you would like to change: "; cin >> datakey
-	*/
 }
 
 void sort_descending()
