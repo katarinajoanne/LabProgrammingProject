@@ -241,7 +241,7 @@ start: //goto label
 
 	/*
 		Make functions to do these tasks:
-		1. Add student data
+		1. Add student data (Almas)
 		2. Display student data
 		   a. Opt 1: Edit data (Almas)
 		   b. Opt 2: Sort by GPA (output choice: ascending or descending) (Joy and Katarina)
