@@ -126,10 +126,92 @@ editStudent:
 	}
 }
 
-void sort_descending()
+void sort_name_AZ()
 {
 	// temp = GPA, temp1 = ID, temp3 = Age, temp 4 = Class, 
 	// temp5 = first name, temp6 = last name
+	int temp3, temp1;
+	float temp;
+	string temp4, temp5, temp6;
+
+	for (int i = 0; i <= counter; i++)
+	{
+		for (int j = 0; j <= counter; j++)
+		{
+			if (student[i].f_name < student[j].f_name)
+			{
+				temp = student[i].GPA;
+				student[i].GPA = student[j].GPA;
+				student[j].GPA = temp;
+
+				temp1 = student[i].ID;
+				student[i].ID = student[j].ID;
+				student[j].ID = temp1;
+
+				temp3 = student[i].Age;
+				student[i].Age = student[j].Age;
+				student[j].Age = temp3;
+
+				temp4 = student[i].Class;
+				student[i].Class = student[j].Class;
+				student[j].Class = temp4;
+
+				temp5 = student[i].f_name;
+				student[i].f_name = student[j].f_name;
+				student[j].f_name = temp5;
+
+				temp6 = student[i].l_name;
+				student[i].l_name = student[j].l_name;
+				student[j].l_name = temp6;
+			}
+		}
+	}
+}
+
+void sort_name_ZA()
+{
+	// temp = GPA, temp1 = ID, temp3 = Age, temp 4 = Class, 
+	// temp5 = first name, temp6 = last name
+	int temp3, temp1;
+	float temp;
+	string temp4, temp5, temp6;
+
+	for (int i = 0; i <= counter; i++)
+	{
+		for (int j = 0; j <= counter; j++)
+		{
+			if (student[i].f_name > student[j].f_name)
+			{
+				temp = student[i].GPA;
+				student[i].GPA = student[j].GPA;
+				student[j].GPA = temp;
+
+				temp1 = student[i].ID;
+				student[i].ID = student[j].ID;
+				student[j].ID = temp1;
+
+				temp3 = student[i].Age;
+				student[i].Age = student[j].Age;
+				student[j].Age = temp3;
+
+				temp4 = student[i].Class;
+				student[i].Class = student[j].Class;
+				student[j].Class = temp4;
+
+				temp5 = student[i].f_name;
+				student[i].f_name = student[j].f_name;
+				student[j].f_name = temp5;
+
+				temp6 = student[i].l_name;
+				student[i].l_name = student[j].l_name;
+				student[j].l_name = temp6;
+			}
+		}
+	}
+}
+
+void sort_descending()
+{
 	int temp3, temp1;
 	float temp;
 	string temp4, temp5, temp6;
@@ -244,7 +326,8 @@ start: //goto label
 		1. Add student data (Almas)
 		2. Display student data
 		   a. Opt 1: Edit data (Almas)
-		   b. Opt 2: Sort by GPA (output choice: ascending or descending) (Joy and Katarina)
+		   b. Opt 2: Sort by Name alphabetically (ascending and descending) (Katarina)
+		   C. Opt 3: Sort by GPA (output choice: ascending or descending) (Joy and Katarina)
 		3. Search for student data by name as input (Almas)
 	4. End Program
 	*/
@@ -259,8 +342,10 @@ start: //goto label
 		int option;
 		cout << "Options: " << endl
 			<< "1. Edit Data" << endl
-			<< "2. GPA (ascending)" << endl
-			<< "3. GPA (descending)" << endl;
+			<< "2. Sort by name (A-Z)" << endl
+			<< "3. Sort by name (Z-A)" << endl
+			<< "4. GPA (ascending)" << endl
+			<< "5. GPA (descending)" << endl << endl;
 		cin >> option;
 		cout << endl;
 		switch (option)
@@ -278,11 +363,21 @@ start: //goto label
 			goto start;
 
 		case 2:
-			sort_ascending();
+			sort_name_AZ();
 			print_alldata();
 			goto start;
 
 		case 3:
+			sort_name_ZA();
+			print_alldata();
+			goto start;
+
+		case 4:
+			sort_ascending();
+			print_alldata();
+			goto start;
+
+		case 5:
 			sort_descending();
 			print_alldata();
 			goto start;
