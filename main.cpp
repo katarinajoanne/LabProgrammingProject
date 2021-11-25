@@ -82,11 +82,11 @@ search: //goto label
 			cout << "Class: " << student[i].Class << endl;
 			cout << "GPA: " << student[i].GPA << endl << endl;
 		}
-		else if (i < counter + 1)
+		else if (i < counter)
 		{
 			continue;
 		}
-		else
+		else if (i == counter)
 		{
 			cout << endl << "Data not found" << endl << endl;
 			goto search;
@@ -128,7 +128,7 @@ editStudent:
 
 void sort_name_AZ()
 {
-	// temp = GPA, temp1 = ID, temp3 = Age, temp 4 = Class, 
+	// temp = GPA, temp1 = ID, temp3 = Age, temp 4 = Class,
 	// temp5 = first name, temp6 = last name
 	int temp3, temp1;
 	float temp;
@@ -170,7 +170,7 @@ void sort_name_AZ()
 
 void sort_name_ZA()
 {
-	// temp = GPA, temp1 = ID, temp3 = Age, temp 4 = Class, 
+	// temp = GPA, temp1 = ID, temp3 = Age, temp 4 = Class,
 	// temp5 = first name, temp6 = last name
 	int temp3, temp1;
 	float temp;
@@ -252,7 +252,7 @@ void sort_descending()
 
 void sort_ascending()
 {
-	// temp = GPA, temp1 = ID, temp3 = Age, temp 4 = Class, 
+	// temp = GPA, temp1 = ID, temp3 = Age, temp 4 = Class,
 	// temp5 = first name, temp6 = last name
 	int temp3, temp1;
 	float temp;
