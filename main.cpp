@@ -24,44 +24,43 @@ void add_student()
 		2. Prints out the data entered and asks for confirmation
 		3. Asks if user would like to add more student data
 	*/
-addStudent: //goto Label
-	cout << "Please enter the following: " << endl;
-	cout << "Student ID: "; cin >> student[counter].ID;
-	cout << endl;
-	cout << "Age: "; cin >> student[counter].Age;
-	cout << endl;
-	cout << "GPA: "; cin >> student[counter].GPA;
-	cout << endl;
-	cout << "Class: "; cin >> student[counter].Class;
-	cout << endl;
-	cout << "Student Name (first name and last name): ";
-	cin >> student[counter].f_name >> student[counter].l_name;
-	cout << endl << endl;
-
-	char more;
-	char correct;
-
-	cout << "ID: " << student[counter].ID << endl
-		<< "Age: " << student[counter].Age << endl
-		<< "GPA: " << student[counter].GPA << endl
-		<< "Class: " << student[counter].Class << endl
-		<< "Student Name: " << student[counter].f_name << " " << student[counter].l_name << endl;
-	cout << endl << "Is this data correct? "; cin >> correct;
-	if (correct == 'n')
+	char more = 'y';
+	while (more != 'n')
 	{
+		cout << "Please enter the following: " << endl;
+		cout << "Student ID: "; cin >> student[counter].ID;
 		cout << endl;
-		goto addStudent;
-	}
-
-	cout << endl << "Would you like to add more student data?(y/n) "; cin >> more;
-
-	while (more == 'y')
-	{
+		cout << "Age: "; cin >> student[counter].Age;
+		cout << endl;
+		cout << "GPA: "; cin >> student[counter].GPA;
+		cout << endl;
+		cout << "Class: "; cin >> student[counter].Class;
+		cout << endl;
+		cout << "Student Name (first name and last name): ";
+		cin >> student[counter].f_name >> student[counter].l_name;
 		cout << endl << endl;
-		counter++;
-		goto addStudent;
+
+
+		char correct;
+
+		cout << "ID: " << student[counter].ID << endl
+			<< "Age: " << student[counter].Age << endl
+			<< "GPA: " << student[counter].GPA << endl
+			<< "Class: " << student[counter].Class << endl
+			<< "Student Name: " << student[counter].f_name << " " << student[counter].l_name << endl;
+			cout << endl << "Is this data correct? "; cin >> correct;
+			if (correct == 'y')
+			{
+				cout << endl << "Would you like to add more student data?(y/n) "; cin >> more;
+				counter++;
+			}
+			else
+			{
+				cout << "Please Re-Enter Data!" << endl;
+				continue;
+			}
+		continue;
 	}
-	cout << endl;
 }
 
 void search_student()
@@ -69,29 +68,27 @@ void search_student()
 search: //goto label
 	string fname;
 	string lname;
+	int size = counter + 1;
+	int index = 0;
 	cout << "Who would you like to search (first name and last name)? ";
 	cin >> fname >> lname;
-	for (int i = 0; i <= counter + 2; i++)
+	while (index < size)
 	{
-		if (student[i].f_name == fname && student[i].l_name == lname)
+		if (student[index].f_name == fname && student[index].l_name == lname)
 		{
 			cout << endl;
-			cout << "ID: " << student[i].ID << endl;
-			cout << "Student Name: " << student[i].f_name << " " << student[i].l_name << endl;
-			cout << "Age: " << student[i].Age << endl;
-			cout << "Class: " << student[i].Class << endl;
-			cout << "GPA: " << student[i].GPA << endl << endl;
+			cout << "ID: " << student[index].ID << endl;
+			cout << "Student Name: " << student[index].f_name << " " << student[index].l_name << endl;
+			cout << "Age: " << student[index].Age << endl;
+			cout << "Class: " << student[index].Class << endl;
+			cout << "GPA: " << student[index].GPA << endl << endl;
+			break;
 		}
-		else if (i < counter)
-		{
-			continue;
-		}
-		else if (i == counter)
-		{
-			cout << endl << "Data not found" << endl << endl;
-			goto search;
-		}
+		else
+			index++;
 	}
+	if (index == size)
+		cout << endl <<"Data not found" << endl << endl;
 }
 
 void edit_data(int key) // edit data
