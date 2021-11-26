@@ -71,7 +71,7 @@ search: //goto label
 	string lname;
 	cout << "Who would you like to search (first name and last name)? ";
 	cin >> fname >> lname;
-	for (int i = 0; i < counter + 2; i++)
+	for (int i = 0; i <= counter + 2; i++)
 	{
 		if (student[i].f_name == fname && student[i].l_name == lname)
 		{
