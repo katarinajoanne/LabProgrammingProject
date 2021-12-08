@@ -25,9 +25,10 @@ void add_student()
 		3. Asks if user would like to add more student data
 	*/
 	char more = 'y';
+	char more_data;
 	while (more != 'n')
 	{
-		cout << "Please enter the following: " << endl;
+		cout << "Please enter the following: " << endl << endl;
 		cout << "Student ID: "; cin >> student[counter].ID;
 		cout << endl;
 		cout << "Age: "; cin >> student[counter].Age;
@@ -51,12 +52,22 @@ void add_student()
 			cout << endl << "Is this data correct? "; cin >> correct;
 			if (correct == 'y')
 			{
-				cout << endl << "Would you like to add more student data?(y/n) "; cin >> more;
-				counter++;
+				cout << endl << "Would you like to add more student data?(y/n) "; cin >> more_data;
+				if (more_data == 'y')
+				{
+					counter ++;
+					more = 'y';
+					cout << endl;
+				}
+				else
+				{
+					more = 'n';
+					cout << endl;
+				}
 			}
 			else
 			{
-				cout << "Please Re-Enter Data!" << endl;
+				cout << endl << "Please Re-Enter Data!" << endl << endl;
 				continue;
 			}
 		continue;
@@ -137,29 +148,7 @@ void sort_name_AZ()
 		{
 			if (student[i].f_name < student[j].f_name)
 			{
-				temp = student[i].GPA;
-				student[i].GPA = student[j].GPA;
-				student[j].GPA = temp;
-
-				temp1 = student[i].ID;
-				student[i].ID = student[j].ID;
-				student[j].ID = temp1;
-
-				temp3 = student[i].Age;
-				student[i].Age = student[j].Age;
-				student[j].Age = temp3;
-
-				temp4 = student[i].Class;
-				student[i].Class = student[j].Class;
-				student[j].Class = temp4;
-
-				temp5 = student[i].f_name;
-				student[i].f_name = student[j].f_name;
-				student[j].f_name = temp5;
-
-				temp6 = student[i].l_name;
-				student[i].l_name = student[j].l_name;
-				student[j].l_name = temp6;
+				swap(student[i], student[j]);
 			}
 		}
 	}
@@ -179,29 +168,7 @@ void sort_name_ZA()
 		{
 			if (student[i].f_name > student[j].f_name)
 			{
-				temp = student[i].GPA;
-				student[i].GPA = student[j].GPA;
-				student[j].GPA = temp;
-
-				temp1 = student[i].ID;
-				student[i].ID = student[j].ID;
-				student[j].ID = temp1;
-
-				temp3 = student[i].Age;
-				student[i].Age = student[j].Age;
-				student[j].Age = temp3;
-
-				temp4 = student[i].Class;
-				student[i].Class = student[j].Class;
-				student[j].Class = temp4;
-
-				temp5 = student[i].f_name;
-				student[i].f_name = student[j].f_name;
-				student[j].f_name = temp5;
-
-				temp6 = student[i].l_name;
-				student[i].l_name = student[j].l_name;
-				student[j].l_name = temp6;
+				swap(student[i], student[j]);
 			}
 		}
 	}
@@ -219,29 +186,7 @@ void sort_descending()
 		{
 			if (student[i].GPA > student[j].GPA)
 			{
-				temp = student[i].GPA;
-				student[i].GPA = student[j].GPA;
-				student[j].GPA = temp;
-
-				temp1 = student[i].ID;
-				student[i].ID = student[j].ID;
-				student[j].ID = temp1;
-
-				temp3 = student[i].Age;
-				student[i].Age = student[j].Age;
-				student[j].Age = temp3;
-
-				temp4 = student[i].Class;
-				student[i].Class = student[j].Class;
-				student[j].Class = temp4;
-
-				temp5 = student[i].f_name;
-				student[i].f_name = student[j].f_name;
-				student[j].f_name = temp5;
-
-				temp6 = student[i].l_name;
-				student[i].l_name = student[j].l_name;
-				student[j].l_name = temp6;
+				swap(student[i], student[j]);
 			}
 		}
 	}
@@ -261,29 +206,7 @@ void sort_ascending()
 		{
 			if (student[i].GPA < student[j].GPA)
 			{
-				temp = student[i].GPA;
-				student[i].GPA = student[j].GPA;
-				student[j].GPA = temp;
-
-				temp1 = student[i].ID;
-				student[i].ID = student[j].ID;
-				student[j].ID = temp1;
-
-				temp3 = student[i].Age;
-				student[i].Age = student[j].Age;
-				student[j].Age = temp3;
-
-				temp4 = student[i].Class;
-				student[i].Class = student[j].Class;
-				student[j].Class = temp4;
-
-				temp5 = student[i].f_name;
-				student[i].f_name = student[j].f_name;
-				student[j].f_name = temp5;
-
-				temp6 = student[i].l_name;
-				student[i].l_name = student[j].l_name;
-				student[j].l_name = temp6;
+				swap(student[i], student[j]);
 			}
 		}
 	}
